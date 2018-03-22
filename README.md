@@ -1,8 +1,10 @@
+mongo-jndi-support
+===================
 If you want to lookup MongoClient as JNDI like connect other database(Oracle,MySQL), Then this project will help you easier.
+---------------------------------------------------------------------------------------------------------------------------
+1. Dowload this project, in dist folder you will found two jar files, put it into tomcat lib folder.
 
-Step1 Dowload this project, in dist folder you will found two jar files, put it into tomcat lib folder.
-
-Step2 Add Resource define into tomcat server.xml
+2. Add Resource define into tomcat server.xml
 Example 1. Build without auth
 <Resource name="testJndi" auth="Container" factory="org.mongo.jndi.support.MongoClientFactory" type="com.mongodb.MongoClient" mongoHost="localhost" mongoPort="27017"/>
 
@@ -12,11 +14,11 @@ Example 2. Build with auth
 Example 3. Build with mongoUri
 <Resource name="testJndi" auth="Container" factory="org.mongo.jndi.support.MongoClientFactory" type="com.mongodb.MongoClient" mongoUri="mongodb://user:pwd@db1.example.net:27017,db2.example.net:2500/test?replicaSet=test"/>
 
-Step3 Add JNDI name to global context, define into tomcat context.xml
+3. Add JNDI name to global context, define into tomcat context.xml
 <ResourceLink global="testJndi" name="testJndi" type="com.mongodb.MongoClient"/>
 
-Step4 Then you can lookup this jdni in you application, below is a Spring Configure Sample.
-<?xml version="1.0" encoding="UTF-8"?>
+4. Then you can lookup this jdni in you application, below is a Spring Configure Sample.
+`<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
@@ -33,10 +35,10 @@ Step4 Then you can lookup this jdni in you application, below is a Spring Config
 			<value>java:comp/env/testJndi</value>
 		</property>
 	</bean>
-</beans>
+</beans>`
 
 Inject in java directly
-package com.gpayroll.audit.config;
+`package com.gpayroll.audit.config;
 
 import javax.annotation.Resource;
 
@@ -73,12 +75,12 @@ public class RepositoryConfig extends AbstractMongoConfiguration {
 	protected String getMappingBasePackage() {
 		return MONGO_BASE_PACKAGE;
 	}
-}
+}`
 
-BTW, Please setup your mongo-java-driver as provider to avoid jar file conflict.
-		<dependency>
+5. BTW, Please setup your mongo-java-driver as provider to avoid jar file conflict.
+		`<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
 			<version>2.14.0</version>
 			<scope>provided</scope>
-		</dependency>
+		</dependency>`
