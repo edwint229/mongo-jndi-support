@@ -26,7 +26,7 @@ Example 3. Build with mongoUri
 
 4. Then you can lookup this jdni in you application, below is a Spring Configure Sample.
 
-`<?xml version="1.0" encoding="UTF-8"?>
+`<?xml version="1.0" encoding="UTF-8"?>`
 
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
 
@@ -60,11 +60,11 @@ Example 3. Build with mongoUri
 
 	</bean>
 
-</beans>`
+</beans>
 
 Inject in java directly
 
-`package com.gpayroll.audit.config;
+package com.gpayroll.audit.config;
 
 
 
@@ -138,11 +138,11 @@ public class RepositoryConfig extends AbstractMongoConfiguration {
 
 	}
 
-}`
+}
 
 5. BTW, Please setup your mongo-java-driver as provider to avoid jar file conflict.
 
-`<dependency>
+<dependency>
 
 	<groupId>org.mongodb</groupId>
 
@@ -152,4 +152,4 @@ public class RepositoryConfig extends AbstractMongoConfiguration {
 
 	<scope>provided</scope>
 
-</dependency>`
+</dependency>
