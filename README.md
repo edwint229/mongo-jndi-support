@@ -47,7 +47,7 @@ If you want to lookup MongoClient as JNDI like connect other database(Oracle,MyS
 
 5. Inject in java directly
 
-		package com.gpayroll.audit.config;
+		package org.mongo.config;
 
 		import javax.annotation.Resource;
 
