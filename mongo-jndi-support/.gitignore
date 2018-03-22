@@ -1,0 +1,63 @@
+[Tt]humbs.db
+*.DS_Store
+~$*
+
+# android.gitignore
+# built application files
+#*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+proguard/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+git.properties
+
+#Eclipse.gitignore
+*.project
+*.settings
+*.classpath
+*.pydevproject
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.DS_Store
+tmp
+
+# Maven
+target/
+
+# TestNG
+test-output
+/logs
+# /profile-development.properties
+/profile-development.properties
+/src/main/resources/git.properties
+/target
