@@ -6,7 +6,7 @@ If you want to lookup MongoClient as JNDI like connect other database(Oracle,MyS
 
 2. Add Resource define into tomcat server.xml
 Example 1. Build without auth
-> <Resource name="testJndi" auth="Container" factory="org.mongo.jndi.support.MongoClientFactory" type="com.mongodb.MongoClient" mongoHost="localhost" mongoPort="27017"/>
+`<Resource name="testJndi" auth="Container" factory="org.mongo.jndi.support.MongoClientFactory" type="com.mongodb.MongoClient" mongoHost="localhost" mongoPort="27017"/>`
 
 Example 2. Build with auth
 <pre><code><Resource name="testJndi" auth="Container" factory="org.mongo.jndi.support.MongoClientFactory" type="com.mongodb.MongoClient" mongoHost="localhost" mongoPort="27017" dbName="test" username="user" password="test1234"/></code></pre>
