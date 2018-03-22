@@ -6,17 +6,17 @@ If you want to lookup MongoClient as JNDI like connect other database(Oracle,MyS
 
 2. Add Resource define into tomcat server.xml
 
-Example 1. Build without auth
+* Example 1. Build without auth
 
 `<Resource name="testJndi" auth="Container" factory="org.mongo.jndi.support.MongoClientFactory" type="com.mongodb.MongoClient" mongoHost="localhost" mongoPort="27017"/>`
 
 
-Example 2. Build with auth
+* Example 2. Build with auth
 
 `<Resource name="testJndi" auth="Container" factory="org.mongo.jndi.support.MongoClientFactory" type="com.mongodb.MongoClient" mongoHost="localhost" mongoPort="27017" dbName="test" username="user" password="test1234"/>`
 
 
-Example 3. Build with mongoUri
+* Example 3. Build with mongoUri
 
 `<Resource name="testJndi" auth="Container" factory="org.mongo.jndi.support.MongoClientFactory" type="com.mongodb.MongoClient" mongoUri="mongodb://user:pwd@db1.example.net:27017,db2.example.net:2500/test?replicaSet=test"/>`
 
@@ -45,7 +45,7 @@ Example 3. Build with mongoUri
 			</bean>
 		</beans>
 
-Inject in java directly
+5. Inject in java directly
 
 		package com.gpayroll.audit.config;
 
@@ -85,7 +85,8 @@ Inject in java directly
 				return MONGO_BASE_PACKAGE;
 			}
 		}
-5. BTW, Please setup your mongo-java-driver as provider to avoid jar file conflict.
+
+6. BTW, Please setup your mongo-java-driver as provider to avoid jar file conflict.
 
 		<dependency>
 			<groupId>org.mongodb</groupId>
