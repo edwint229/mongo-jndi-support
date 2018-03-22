@@ -68,7 +68,7 @@ If you want to lookup MongoClient as JNDI like connect other database(Oracle,MyS
 			private String dbName;
 
 			@Resource
-			*private MongoClient mongoClient;*
+			private MongoClient mongoClient;
 
 			@Override
 			protected String getDatabaseName() {
