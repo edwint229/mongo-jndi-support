@@ -62,7 +62,7 @@ If you want to lookup MongoClient as JNDI like connect other database(Oracle,MyS
 		@Configuration
 		@EnableMongoRepositories(basePackages = RepositoryConfig.MONGO_BASE_PACKAGE)
 		public class RepositoryConfig extends AbstractMongoConfiguration {
-			public static final String MONGO_BASE_PACKAGE = "com.gpayroll.mongo.dao";
+			public static final String MONGO_BASE_PACKAGE = "org.mongo.dao";
 
 			@Value("${mongo.dbname}")
 			private String dbName;
