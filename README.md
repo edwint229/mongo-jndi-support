@@ -9,7 +9,7 @@ Example 1. Build without auth
 > <Resource name="testJndi" auth="Container" factory="org.mongo.jndi.support.MongoClientFactory" type="com.mongodb.MongoClient" mongoHost="localhost" mongoPort="27017"/>
 
 Example 2. Build with auth
-> <Resource name="testJndi" auth="Container" factory="org.mongo.jndi.support.MongoClientFactory" type="com.mongodb.MongoClient" mongoHost="localhost" mongoPort="27017" dbName="test" username="user" password="test1234"/>
+<pre><code><Resource name="testJndi" auth="Container" factory="org.mongo.jndi.support.MongoClientFactory" type="com.mongodb.MongoClient" mongoHost="localhost" mongoPort="27017" dbName="test" username="user" password="test1234"/></code></pre>
 
 Example 3. Build with mongoUri
 > <Resource name="testJndi" auth="Container" factory="org.mongo.jndi.support.MongoClientFactory" type="com.mongodb.MongoClient" mongoUri="mongodb://user:pwd@db1.example.net:27017,db2.example.net:2500/test?replicaSet=test"/>
