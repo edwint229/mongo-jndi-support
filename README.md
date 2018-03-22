@@ -6,16 +6,16 @@ If you want to lookup MongoClient as JNDI like connect other database(Oracle,MyS
 
 2. Add Resource define into tomcat server.xml
 Example 1. Build without auth
-<Resource name="testJndi" auth="Container" factory="org.mongo.jndi.support.MongoClientFactory" type="com.mongodb.MongoClient" mongoHost="localhost" mongoPort="27017"/>
+> <Resource name="testJndi" auth="Container" factory="org.mongo.jndi.support.MongoClientFactory" type="com.mongodb.MongoClient" mongoHost="localhost" mongoPort="27017"/>
 
 Example 2. Build with auth
-<Resource name="testJndi" auth="Container" factory="org.mongo.jndi.support.MongoClientFactory" type="com.mongodb.MongoClient" mongoHost="localhost" mongoPort="27017" dbName="test" username="user" password="test1234"/>
+> <Resource name="testJndi" auth="Container" factory="org.mongo.jndi.support.MongoClientFactory" type="com.mongodb.MongoClient" mongoHost="localhost" mongoPort="27017" dbName="test" username="user" password="test1234"/>
 
 Example 3. Build with mongoUri
-<Resource name="testJndi" auth="Container" factory="org.mongo.jndi.support.MongoClientFactory" type="com.mongodb.MongoClient" mongoUri="mongodb://user:pwd@db1.example.net:27017,db2.example.net:2500/test?replicaSet=test"/>
+> <Resource name="testJndi" auth="Container" factory="org.mongo.jndi.support.MongoClientFactory" type="com.mongodb.MongoClient" mongoUri="mongodb://user:pwd@db1.example.net:27017,db2.example.net:2500/test?replicaSet=test"/>
 
 3. Add JNDI name to global context, define into tomcat context.xml
-<ResourceLink global="testJndi" name="testJndi" type="com.mongodb.MongoClient"/>
+> <ResourceLink global="testJndi" name="testJndi" type="com.mongodb.MongoClient"/>
 
 4. Then you can lookup this jdni in you application, below is a Spring Configure Sample.
 `<?xml version="1.0" encoding="UTF-8"?>
